@@ -6,7 +6,7 @@
 /*   By: ysakarya <ysakarya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:08:20 by ysakarya          #+#    #+#             */
-/*   Updated: 2024/02/06 18:08:30 by ysakarya         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:35:50 by ysakarya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
-	while (str[i] != '/0')
+	while (str[i] != '\0')
 	{
-		write (1, str[i], 1);
+		write (1, &str[i], 1);
 		i++;
 	}
 }

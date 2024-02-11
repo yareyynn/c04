@@ -1,48 +1,37 @@
-int ft_atoi(char *str)
-{
-	int i;
-	int sign;
-	int a;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysakarya <ysakarya@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/10 16:12:50 by ysakarya          #+#    #+#             */
+/*   Updated: 2024/02/11 22:48:20 by ysakarya         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	a = 0;
+int	ft_atoi(char *str)
+{
+	int	i;
+	int a;
+	int s;
+
 	i = 0;
-	sign = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == ' ' || str[i] == '	')
+	a = 0;
+	s = 1;
+	
+	while (str[i] <= 9 || str[i] >= 13 || str[i] == 32 || str[i] != '\0')
+		i++;
+	while (str[i] <= '-' || str[i] >= '+' || str[i] != '\0')
 		{
+			if (str[i] == '-')
+				s = -s;
 			i++;
-			continue;
 		}
-		else;
-			break;
-	}
-	while(str[i] != '\0')
+	while (str[i] <= '9' && str[i] >= '0' || str[i] != '\0')
 	{
-		if (str[i] == '-' || str[i] == '+')
-		{
-			if(str[i] == '-')
-				sign++;
-			i++;
-			continue;
-		}
-		else
-			break;
+		a = (a * 10) + (str[i] - 48);
+		i++;
 	}
-	while (str[i] != '\0')
-	{
-		if (str[i] <= '9' && str[i] >= '0')
-			{
-				a = (a * 10) + (str[i]-48);
-				i++;
-				continue;
-			}
-		else;
-			break;
-	}
-	if (sign % 2 == 1)
-		return (-a);
-	else 
-		return a;
-		
+	return (a * s);
 }

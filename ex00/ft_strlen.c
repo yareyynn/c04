@@ -6,21 +6,18 @@
 /*   By: ysakarya <ysakarya@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:06:17 by ysakarya          #+#    #+#             */
-/*   Updated: 2024/02/06 18:08:32 by ysakarya         ###   ########.fr       */
+/*   Updated: 2024/02/10 18:26:08 by ysakarya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
 	int	counter;
-	int	i;
 
 	counter = 0;
-	i = 0;
-	while (str[i] != '/0')
+	while (str[counter] != '\0')
 	{
 		counter++;
-		i++;
 	}
 	return (counter);
 }
